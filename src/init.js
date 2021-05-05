@@ -1,7 +1,7 @@
-$(document).ready(function() {
+$(document).ready(function () {
   window.dancers = [];
 
-  $('.addDancerButton').on('click', function(event) {
+  $('.addDancerButton').on('click', function (event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
      * As long as the "data-dancer-maker-function-name" attribute of a
@@ -22,12 +22,31 @@ $(document).ready(function() {
 
     // make a dancer with a random position
 
-    var dancer = dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+    var dancer = new dancerMakerFunction(
+      $(".dancefloor").height() * Math.random(),
+      $(".dancefloor").width() * Math.random(),
       Math.random() * 1000
     );
-    $('body').append(dancer.$node);
+    $('.dancefloor').append(dancer.$node);
   });
+
+  $('#submit').on('click', function (event) {
+    event.preventDefault();
+    var staffMemberName = document.getElementById("myList").value;
+    //var staffMemberMakerFunctionName = 'makeStaffDancer';
+    //var staffMemberMakerFunction = window[staffMemberMakerFunctionName];
+    var staffDancer = new makeStaffDancer($(".dancefloor").height() * Math.random(),
+      $(".dancefloor").width() * Math.random(), staffMemberName);
+
+    $('.dancefloor').append(staffDancer.$node);
+  });
+
+  $('.lineUpButton').on('click', function (event) {
+    //var listOfDancers = lineup.css()
+    //lineupButton();
+    $(".lineup").css({ "top": "200px" });
+  });
+
+
 });
 

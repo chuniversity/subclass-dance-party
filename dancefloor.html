@@ -1,16 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Object Dance Party</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <script src="src/dancer.js"></script>
-    <script src="src/blinkyDancer.js"></script>
-  </head>
-  <body>
-    <div class="topbar">
-      <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">add a blinky dancer</a>    </div>
-    <script src="src/init.js"></script>
-  </body>
+
+<head>
+  <title>Object Dance Party</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="src/dancer.js"></script>
+  <script src="src/blinkyDancer.js"></script>
+  <script src="src/spinnyDancer.js"></script>
+  <script src="src/staffDancer.js"></script>
+  <script src="src/dancerInteraction.js"></script>
+
+</head>
+
+<body>
+  <div class="topbar">
+    <span class="title">Best Dance Party Ever!</span>
+    <input type="button" href="#" class="lineUpButton" value="Line Up Dancers!">
+    <input type="button" href="#" class="addDancerButton button" data-dancer-maker-function-name="makeBlinkyDancer"
+      value="Add a blinky dancer">
+    <input type="button" href="#" class="addDancerButton button" data-dancer-maker-function-name="makeSpinnyDancer"
+      value="Add a Spinny Dancer">
+    <div class="form-wrapper">
+      <label for="staff">Choose a Staff Member:</label>
+      <form>
+        <select name="staff" id="myList">
+          <option value="allison">Allison</option>
+          <option value="cody">Cody</option>
+          <option value="jack">Jack</option>
+          <option value="kim">Kim</option>
+          <option value="tom">Tom</option>
+        </select>
+        <input type="submit" id="submit" data-dancer-maker-function-name="makeStaffDancer" value="Submit" />
+      </form>
+    </div>
+
+    <!-- <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeStaffDancer">add a staff dancer</a> -->
+  </div>
+  <div class="spacer1"></div>
+  <div class="dancefloor-box">
+    <div class="dancefloor"></div>
+  </div>
+  <div class="spacer2"></div>
+
+  <script src="src/init.js"></script>
+</body>
+
 </html>
